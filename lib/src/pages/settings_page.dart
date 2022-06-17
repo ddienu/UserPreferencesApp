@@ -12,7 +12,7 @@ class SettingsPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Ajustes'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Ajustes Page'),
       )
     );
