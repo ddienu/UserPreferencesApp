@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:userpreferencesapp/src/pages/settings_page.dart';
+
+import 'package:userpreferencesapp/src/widgets/menu_widget.dart';
 
 
 class HomePage extends StatelessWidget {
@@ -11,10 +12,12 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black26,
+        elevation: 0.5,
         centerTitle: true,
         title: const Text('Preferencias de usuario'),
       ),
-      drawer: _crearMenu(context),
+      drawer: MenuWidget(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: const [
@@ -29,44 +32,4 @@ class HomePage extends StatelessWidget {
     );
 }
 
-  Drawer _crearMenu(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        children: [
-          DrawerHeader(
-            child: Container(),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/menu-img.jpg'),
-                fit: BoxFit.cover,
-                )
-            ),
-            ),
-            ListTile(
-              leading: Icon(Icons.home_filled, color: Colors.blue,),
-              title: Text('Home'),
-              onTap: () => Navigator.pushReplacementNamed(context, HomePage.routeName)
-            ),
-
-            ListTile(
-              leading: Icon(Icons.party_mode, color: Colors.blue,),
-              title: Text('Party mode'),
-              onTap: (){},
-            ),
-
-            ListTile(
-              leading: Icon(Icons.people_alt_outlined, color: Colors.blue,),
-              title: Text('People'),
-              onTap: (){},
-            ),
-
-            ListTile(
-              leading: Icon(Icons.settings, color: Colors.blue,),
-              title: Text('Settings'),
-              onTap: () => Navigator.pushReplacementNamed(context, SettingsPage.routeName)
-            ),
-        ],
-      ),
-      );  
-  }
 }

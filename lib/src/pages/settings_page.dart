@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:userpreferencesapp/src/widgets/menu_widget.dart';
 
 
 class SettingsPage extends StatelessWidget {
@@ -10,8 +11,12 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        elevation: 0.5,
+        backgroundColor: Colors.black26,
         title: const Text('Ajustes'),
       ),
+      drawer: MenuWidget(),
       body: const Center(
         child: Text('Ajustes Page'),
       )
