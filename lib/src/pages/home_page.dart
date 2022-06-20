@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:userpreferencesapp/src/shared_prefs/user_preferences.dart';
 
 import 'package:userpreferencesapp/src/widgets/menu_widget.dart';
 
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
 
   static final String routeName = 'home';
+
+  final prefs = UserPreferences();
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +23,10 @@ class HomePage extends StatelessWidget {
       drawer: MenuWidget(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
+        children: [
           Text('Color secundario:'),
           Divider(),
-          Text('Género'),
+          Text('Género ${prefs.genero}'),
           Divider(),
           Text('Nombre de usario:'),
           Divider()
