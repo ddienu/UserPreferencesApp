@@ -5,7 +5,7 @@ import 'package:userpreferencesapp/src/pages/settings_page.dart';
 import 'package:userpreferencesapp/src/shared_prefs/user_preferences.dart';
 
 void main() async {
-
+  WidgetsFlutterBinding.ensureInitialized();
   final prefs = UserPreferences();
   await prefs.initPrefs();
 
